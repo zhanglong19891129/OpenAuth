@@ -19,7 +19,7 @@ namespace OpenAuth.UnitTest
         [TestMethod]
         public void Test()
         {
-            
+            Console.WriteLine("111111111111");
         }
     }
 }
