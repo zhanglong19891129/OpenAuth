@@ -1,0 +1,5 @@
+2016-05-14 18:43:31,531 [1] INFO  log4net [(null)] - 启动Web
+2016-05-14 18:43:34,239 [8] FATAL log4net [(null)] - 未登录
+2016-05-14 18:46:14,100 [7] INFO  log4net [(null)] - 启动Web
+2016-05-14 18:46:14,479 [5] FATAL log4net [(null)] - 未登录
+2016-05-14 18:47:12,416 [6] FATAL log4net [(null)] - 在控制器“OpenAuth.Mvc.Controllers.ModuleManagerController”上未找到公共操作方法“Add”。

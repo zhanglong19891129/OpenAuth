@@ -1,0 +1,77 @@
+﻿@{
+    Layout = "~/Views/Shared/_BjuiLayout.cshtml";
+}
+
+@{ Html.RenderAction("MenuHeader", "Home");}
+<div class="bjui-pageContent tableContent" style="position: relative">
+    <div class="clearfix">
+        <div style="float: left; width: 220px; overflow: auto;" class="table table-bordered">
+            <ul id="tree" class="ztree"></ul>
+        </div>
+
+        <div id="detail" style="margin-left: 225px;">
+            <table id="maingrid" class="table table-bordered"></table>
+        </div>
+    </div>
+</div>
+
+<!--编辑对话框-->
+<div class="bjui-dialog hidden bjui-dialog-container" id="editDlg" data-noinit="true">
+    <div class="bjui-pageContent">
+        <form action="/OrgManager/AddOrg" class="pageForm" data-toggle="validate" data-reload="false" id="editForm">
+            <table class="table table-condensed table-hover">
+                <tbody>
+                    <input type="text" id="Id" name="Id" value="" class="hidden" />
+                    <tr>
+                        <td>
+                            <label for="Name" class="control-label x120">组织名称：</label>
+                            <input type="text" id="Name" name="Name" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="IsLeaf" class="control-label x120">是否叶子节点：</label>
+                            <select name="IsLeaf" id="IsLeaf" data-toggle="selectpicker" data-rule="required">
+                                <option value="false">否</option>
+                                <option value="true">是</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="IsAutoExpand" class="control-label x120">是否自动展开：</label>
+                            <select name="IsAutoExpand" id="IsAutoExpand" data-toggle="selectpicker" data-rule="required">
+                                <option value="false">否</option>
+                                <option value="true">是</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="SortNo" class="control-label x120">排序号：</label>
+                            <input type="text" id="SortNo" name="SortNo" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="ParentName" class="control-label x120">上级机构：</label>
+                            <input id="ParentId" name="ParentId" style="display: none" />
+                            <input type="text" name="ParentName" id="ParentName"
+                                   data-toggle="selectztree" data-tree="#j_select_tree1">
+                            <ul id="j_select_tree1" class="ztree hide" data-toggle="ztree"></ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <div class="bjui-pageFooter">
+        <ul>
+            <li><button type="button" class="btn btn-close">关闭</button></li>
+            <li><button type="button" class="btn btn-primary" id="btnSave">保存</button></li>
+        </ul>
+    </div>
+</div>
+
+<script src="~/BllScripts/grid.js"></script>
+<script src="~/BllScripts/OrgManager.js"></script>
