@@ -17,6 +17,7 @@ namespace OpenAuth.Repository
         {
             var result = from category in Context.Categories where orgId.Contains(category.Id)
                 select category;
+            var resultaaa = result;
             return result;
 
         }
